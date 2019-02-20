@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>EN</h1>
+	<div>
+		<a href="/abc?locale=en_GB" class="btn btn-default">
+		    <img src="images/flag-english.png" style="width:32px">Show in English
+		</a>
+		<a href="/abc?locale=zh_CN" class="btn btn-default">
+		    <img src="images/flag-chinese.png" style="width:32px">
+		    Show in Chinese
+		</a>
+	</div>
+	<br><br><br>
+
+	{@query sort="title" type="custom:auroraNews" locale="{request.qs.locale}" }
+	   <table>
+	   {#rows}
+	      <tr>
+	         <td>{_doc}</td>
+	         <td>{title}</td>
+	      </tr>
+	      
+	   {/rows}
+	   </table>
+	{/query}
+</body>
+</html>
