@@ -1,15 +1,30 @@
-{@layout path="default" /}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<a href="/abc?locale=en_GB" class="btn btn-default">
+		    <img src="images/flag-english.png" style="width:32px">Show in English
+		</a>
+		<a href="/abc?locale=zh_CN" class="btn btn-default">
+		    <img src="images/flag-chinese.png" style="width:32px">
+		    Show in Chinese
+		</a>
+	</div>
+	<br><br><br>
 
-{<content} <!-- Content-->
-
-<div class="container">
-    <div class="group-text text-center">
-        <h2 class="text-uppercase">Articles.</h2>
-    </div>
-    <hr/>
-</div>
-
-{@block path="sample/as-list/wrapper" documentURL="aurora" documentType="custom:importtes0" /}
-
-<!-- /Content-->
-{/content}
+	{@query sort="title" type="custom:auroraNews" locale="{request.qs.locale}" }
+	   <table>
+	   {#rows}
+	      <tr>
+	         <td>{_doc}</td>
+	         <td>{title}</td>
+	      </tr>
+	      
+	   {/rows}
+	   </table>
+	{/query}
+</body>
+</html>
