@@ -1,0 +1,18 @@
+{@layout path="default" /}
+
+{<content} <!-- Content-->
+
+{@params root=""  rootType="custom:landingpages0" listType="Home"}
+{@queryOne type=rootType limit="1" field="publishedStatus" fieldValue=true }
+{#content}
+<!-- Landing Page Row = {type} -->
+{@eq key=type value="jumbotron"}
+{@block path="content/jumbotron/wrapper" showLeader="true" style=colour textposition=position textwidth="50" imagewidth="50" pixelWidth="640"/}
+{/eq}
+{/content}
+{/queryOne}
+{/params}
+
+<!-- /Content-->
+{/content}
+

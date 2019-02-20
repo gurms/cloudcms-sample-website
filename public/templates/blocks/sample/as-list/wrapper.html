@@ -1,0 +1,15 @@
+<div class="container">
+<div class="row group-articles">
+{@query type=documentType }
+{#rows} 
+	<div class="col-sm-4 group-article">
+		<p class="title-short"><span style="font-size:8px;">ID:{articleID} | v{version} | {articleMetaData[0].WorkflowMetaData.Modified}</span><br/><span style="font-size:12px;line-height:1.2em;">By {articleMetaData[0].WorkflowMetaData.Modifier} for {articleMetaData[0].BasicMetaData.Publication.Name} | {articleMetaData[0].BasicMetaData.Category.Name}</small></p>
+		<h4 class="text-uppercase title">{title}</h4>
+		<p class="leader">{articleMetaData[0].ContentMetaData.Slugline}</p>
+
+		<a href="./aurora?id={_doc}" class="btn-signpost">Read more<i class="fa fa-chevron-right"></i></a>
+	</div>
+{/rows}
+{/query}
+</div>
+</div>
